@@ -1,13 +1,18 @@
 #define GLFW_INCLUDE_GLCOREARB
 #include <GLFW/glfw3.h>
 
+#include <cstdlib>
+#include <cstdio>
+
+
+using namespace std;
 
 //GLFW error callback, called on glfw errors
 void error_callback(int error, const char* description){
-  printf(description);
+  printf("%s\n",description);
 }
 
-static void key_callback(GLFWwindow* window, int key, int scancode, int action int mods){
+static void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods){
   if(key == GLFW_KEY_ESCAPE && action == GLFW_PRESS){
     glfwSetWindowShouldClose(window,GL_TRUE);
   }
@@ -16,7 +21,7 @@ static void key_callback(GLFWwindow* window, int key, int scancode, int action i
 int main(){
 
   //init the GLFW library
-  if(!glfwinit()){
+  if(!glfwInit()){
     printf("GLFW init failed, exiting \n");
     exit(-1);
   }
