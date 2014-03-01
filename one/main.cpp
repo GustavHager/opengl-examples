@@ -4,7 +4,6 @@
 #include <cstdlib>
 #include <cstdio>
 
-
 using namespace std;
 
 //GLFW error callback, called on glfw errors
@@ -49,7 +48,7 @@ int main(){
   while(!glfwWindowShouldClose(window)){
     float ratio;
     int width,height;
-    glfwGetFramebufferSize(window,&width,&height);
+    
     ratio = (float)width / (float)height;
     glViewport(0,0,width,height);
     glClear(GL_COLOR_BUFFER_BIT);
