@@ -7,7 +7,7 @@ void glfw_error_callback(int error, const char* description){
 
 //GLFW key callback, called on key events
 static void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods){
-  
+    
 }
 
 int main(int argc, char** argv){
