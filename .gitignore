@@ -14,3 +14,12 @@
 
 #build folder
 build/
+
+#compiled python scripts
+*.pyc
+
+#osx finder stuff
+.DS_STORE
+
+#vim swap file
+*.swp

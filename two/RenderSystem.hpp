@@ -1,27 +1,24 @@
 #ifndef RENDER_SYSTEM_HPP
 #define RENDER_SYSTEM_HPP
 
-#include <list>
 
-class RenderPass{
-  RenderPass();
-  virtual void render() = 0;
-  virtual bool skipPass() = 0;
+class Camera{
+public:
+  Camera(float x = 0.0, float y=0.0, float z=0.0);
 };
-
 
 /*
 * This is the render manger class, it handles the 
-* separate render passes, and makes sure they are
-* done in the correct order, or skipped if not needed 
+* separate render passes, and interfaces with the rest
+* of the systems 
 */
 class RenderSystem{
 public:
   RenderSystem();
   ~RenderSystem();
+  void draw();
   
 private:
-  std::list<RenderPass> renderPasses;
 
 };
 
