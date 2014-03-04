@@ -1,11 +1,8 @@
 #ifndef RENDER_SYSTEM_HPP
 #define RENDER_SYSTEM_HPP
 
+#include "glm/glm.hpp"
 
-class Camera{
-public:
-  Camera(float x = 0.0, float y=0.0, float z=0.0);
-};
 
 /*
 * This is the render manger class, it handles the 
