@@ -12,9 +12,12 @@ FIND_LIBRARY(COREVIDEO_LIBRARY CoreVideo REQUIRED)
 
 INCLUDE_DIRECTORIES(${OPENGL_INCLUDE_DIR})
 
+#defines for glfw library, also included in some source files to help the autocomplet
 ADD_DEFINITIONS(-DGLFW_INCLUDE_GLCOREARB)
+#defines for GLM library
+ADD_DEFINITIONS(-DGLM_FORCE_RADIANS)
 
-ADD_EXECUTABLE(game main.cpp Window.cpp)
+ADD_EXECUTABLE(game main.cpp Window.cpp Camera.cpp RenderSystem.cpp)
 
 TARGET_LINK_LIBRARIES(game ${OPENGL_LIBRARIES} 
 							   ${GLFW_LIBRARY} 

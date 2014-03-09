@@ -22,18 +22,5 @@ int main(int argc, char** argv){
   glfwSetErrorCallback(glfw_error_callback);
 
 
-  while(!glfwWindowShouldClose(window)){
-    float ratio;
-    int width,height;
-    glfwGetFramebufferSize(window,&width,&height);
-    ratio = (float)width / (float)height;
-    glViewport(0,0,width,height);
-    glClear(GL_COLOR_BUFFER_BIT);
-
-    //code to draw stuff goes here..
-
-    glfwSwapBuffers(window);
-    glfwPollEvents();
-  }
   glfwTerminate();
 }
