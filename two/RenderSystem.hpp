@@ -34,9 +34,10 @@ public:
       glGenBuffers(1,&vertexBufferID); 
       glBindBuffer(GL_ARRAY_BUFFER,vertexBufferID);
       glBufferData(GL_ARRAY_BUFFER,3*vertices.size(),&vertices,GL_STATIC_DRAW);
+
+      glEnableVertexAttribArray(0);
     }
 
-private:
   PhysicalState state;
   GLuint vertexArrayID;
   GLuint vertexBufferID;
@@ -51,11 +52,13 @@ class RenderSystem{
 public:
   RenderSystem();
   ~RenderSystem();
+   
   void draw(void);
   void init(void);
   
 private:
   void simple_draw(void);
+  void draw_object(Drawable& d);
   std::vector<Drawable> drawables;
 
 };

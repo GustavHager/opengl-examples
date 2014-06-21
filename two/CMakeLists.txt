@@ -1,7 +1,7 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 2.0)
 PROJECT(openglExamples)
 
-set(CXX_FLAGS "-stdlib=libc++")
+set(CMAKE_CXX_FLAGS "-stdlib=libc++ -std=c++11")
 
 FIND_PACKAGE(OpenGL REQUIRED)
 FIND_PACKAGE(GLFW REQUIRED)

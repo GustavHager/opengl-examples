@@ -8,10 +8,14 @@
 
 class Window{
 public:
-	Window(int height=640, int width=480,std::string window_name="w1n");
+	Window(std::string window_name="w1n",int height=640, int width=480);
 	~Window();
   void setRenderer(RenderSystem* renderer);
   void show(void);
+  void setInputManager(void (*f)(GLFWwindow*,int,int,int,int) );
+  GLFWwindow* getWindowHandle(void);
+  bool windowShouldClose(void);
+  void redraw(void);
 
 private:
 	const int height,width;

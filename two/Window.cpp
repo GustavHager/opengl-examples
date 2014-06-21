@@ -1,6 +1,6 @@
 #include "Window.hpp"
 
-Window::Window(int height,int width,std::string window_name) : 
+Window::Window(std::string window_name,int height,int width) : 
       height(height), width(width), window_name(window_name), 
       renderer(NULL){ }
 
@@ -15,15 +15,31 @@ void Window::setRenderer(RenderSystem* renderer){
 void Window::show(void){
 
   if(renderer == 0){
-    printf("Render system not set, unable to create window");
+    printf("Render system not set, unable to create window\n");
   }
 
 	window_handle = glfwCreateWindow(height,width,window_name.c_str(),NULL,NULL);
 
   if(!window_handle){
-    printf("Failed to create window!");
+    printf("Failed to create window!\n");
   }
-
+  
+  glfwMakeContextCurrent(window_handle);
 }
 
+void Window::setInputManager(void (*f)(GLFWwindow*, int, int, int, int)){
+  printf("input manager set!\n");
+  glfwSetKeyCallback(window_handle,f);
+}
 
+GLFWwindow* Window::getWindowHandle(void){
+  return window_handle;
+}
+
+bool Window::windowShouldClose(void){
+  return glfwWindowShouldClose(window_handle);
+}
+
+void Window::redraw(void){
+  renderer->draw();
+}

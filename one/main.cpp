@@ -53,10 +53,10 @@ int main(){
     glViewport(0,0,width,height);
     glClear(GL_COLOR_BUFFER_BIT);
 
+
     //code to draw stuff goes here..
 
     glfwSwapBuffers(window);
-    glfwPollEvents();
   }
 
   //destroy the window
