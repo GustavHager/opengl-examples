@@ -28,4 +28,5 @@ void RenderSystem::draw_object(Drawable& d){
 
 void RenderSystem::init(void){
   drawables.push_back(Drawable());
+  printf("drawing stuff\n");
 }

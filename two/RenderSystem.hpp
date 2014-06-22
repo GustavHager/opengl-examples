@@ -20,20 +20,25 @@ public:
       state.orientation = glm::quat(0.0f,0.0f,0.0f,0.0f);
       state.scale = glm::vec3(1.0f,1.0f,1.0f);
 
+
+      printf("generated the coordinates\n");
       //generate some vertices
       vertices.push_back(glm::vec3(0.0f,0.0f,0.0f));
       vertices.push_back(glm::vec3(1.0f,0.0f,0.0f));
       vertices.push_back(glm::vec3(0.0f,1.0f,0.0f));
 
-
+      printf("pushed the data\n");
       //vertex array stuff
       glGenVertexArrays(1,&vertexArrayID);
+      printf("generating vertex arrays\n");
       glBindVertexArray(vertexArrayID);
-
+      printf("generating and binding vertex array\n");
       //vertex buffer stuff
       glGenBuffers(1,&vertexBufferID); 
       glBindBuffer(GL_ARRAY_BUFFER,vertexBufferID);
       glBufferData(GL_ARRAY_BUFFER,3*vertices.size(),&vertices,GL_STATIC_DRAW);
+
+      printf("done!\n");
 
       glEnableVertexAttribArray(0);
     }

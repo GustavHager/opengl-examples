@@ -33,6 +33,7 @@ int main(int argc, char** argv){
   
   Window* w1n = new Window("w1n");
   RenderSystem* renderer = new RenderSystem();
+  renderer->init();
   w1n->setRenderer(renderer);
   w1n->show();
 

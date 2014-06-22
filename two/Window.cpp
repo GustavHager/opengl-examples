@@ -17,8 +17,13 @@ void Window::show(void){
   if(renderer == 0){
     printf("Render system not set, unable to create window\n");
   }
-
-	window_handle = glfwCreateWindow(height,width,window_name.c_str(),NULL,NULL);
+  
+  glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
+  glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 1);
+  glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+  glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
+	
+  window_handle = glfwCreateWindow(height,width,window_name.c_str(),NULL,NULL);
 
   if(!window_handle){
     printf("Failed to create window!\n");
