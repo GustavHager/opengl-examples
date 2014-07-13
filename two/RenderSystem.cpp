@@ -30,3 +30,19 @@ void RenderSystem::init(void){
   drawables.push_back(Drawable());
   printf("drawing stuff\n");
 }
+
+void RenderSystem::printError(void){
+  GLenum errorCode = glGetError();
+  if(errorCode == GL_NO_ERROR){
+    std::cerr << "No gl error" << std::endl;
+  }else if(errorCode == GL_INVALID_ENUM){
+    std::cerr << "GL invalid enum" << std::endl;
+  }else if(errorCode == GL_INVALID_VALUE){
+    std::cerr << "GL invalid value" << std::endl; 
+  }else if(errorCode == GL_INVALID_OPERATION){
+    std::cerr << "GL invalid operation" << std::endl;
+  }else{
+    std::cerr << "GL unknown error (msg missing)" << std::endl;
+  }
+
+}

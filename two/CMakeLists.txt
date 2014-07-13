@@ -5,7 +5,6 @@ set(CMAKE_CXX_FLAGS "-stdlib=libc++ -std=c++11")
 
 FIND_PACKAGE(OpenGL REQUIRED)
 FIND_PACKAGE(GLFW REQUIRED)
-FIND_LIBRARY(GLEW REQUIRED)
 
 FIND_LIBRARY(COCOA_LIBRARY Cocoa REQUIRED)
 FIND_LIBRARY(IOKIT_LIBRARY IOKit REQUIRED) 
@@ -26,7 +25,6 @@ ADD_EXECUTABLE(game main.cpp Window.cpp Camera.cpp RenderSystem.cpp)
 
 TARGET_LINK_LIBRARIES(game 
                  ${OPENGL_LIBRARIES} 
-                 ${GLEW_LIBRARY}
 							   ${GLFW_LIBRARY} 
 							   ${COCOA_LIBRARY} 
 							   ${IOKIT_LIBRARY}

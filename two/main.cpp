@@ -33,9 +33,10 @@ int main(int argc, char** argv){
   
   Window* w1n = new Window("w1n");
   RenderSystem* renderer = new RenderSystem();
-  renderer->init();
+  //renderer->init();
   w1n->setRenderer(renderer);
   w1n->show();
+  renderer->init();
 
   glfwSetKeyCallback(w1n->getWindowHandle(),(GLFWkeyfun)key_callback);
 

@@ -5,6 +5,7 @@
 #include "glm/glm.hpp"
 #include "glm/gtc/quaternion.hpp"
 #include <vector>
+#include <iostream>
 
 struct PhysicalState{
   glm::vec3 pos;
@@ -65,6 +66,7 @@ private:
   void simple_draw(void);
   void draw_object(Drawable& d);
   std::vector<Drawable> drawables;
+  void printError(void);
 
 };
 
