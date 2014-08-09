@@ -21,7 +21,7 @@ ADD_DEFINITIONS(-DGLM_FORCE_RADIANS)
 #defines for the GLEW library
 ADD_DEFINITIONS(-DGLEW_STATIC)
 
-ADD_EXECUTABLE(game main.cpp Window.cpp Camera.cpp RenderSystem.cpp)
+ADD_EXECUTABLE(game main.cpp Window.cpp Camera.cpp RenderSystem.cpp Shader.cpp)
 
 TARGET_LINK_LIBRARIES(game 
                  ${OPENGL_LIBRARIES} 

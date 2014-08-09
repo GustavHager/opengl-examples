@@ -7,6 +7,8 @@
 #include <vector>
 #include <iostream>
 
+#include "Shader.hpp"
+
 struct PhysicalState{
   glm::vec3 pos;
   glm::quat orientation; 

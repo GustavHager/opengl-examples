@@ -28,7 +28,11 @@ void RenderSystem::draw_object(Drawable& d){
 
 void RenderSystem::init(void){
   drawables.push_back(Drawable());
-  printf("drawing stuff\n");
+
+  //load the shader
+  Shader s("shader.vert","shader.frag"); 
+
+  printf("Render system initialized \n");
 }
 
 void RenderSystem::printError(void){
